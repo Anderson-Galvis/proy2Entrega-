@@ -28,9 +28,6 @@ svg {
     font: inherit;
 }
 
-.oculto {
-    display: none;
-}
 
 .gulfs {
     font-family: "Gulfs Display";
@@ -50,81 +47,7 @@ svg {
     border: 2px solid black;
 }
 
-/* 
------------------------------------------------------------------------------
-ANIMACIONES GENERALES
------------------------------------------------------------------------------
-*/
 
-.boton:hover {
-    filter: brightness(0.87);
-    cursor: pointer;
-}
-
-.hyper:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-} 
-
-.boton:active {
-    animation: pressButton 0.2s ease;
-}
-
-.estrella {
-    animation: twinkle-and-move 2.5s infinite ease-in-out 0.4s;
-}
-
-@keyframes pressButton {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.88); }
-    100% { transform: scale(1); }
-}
-
-@keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-@keyframes twinkle {
-    0%, 100% {
-      opacity: 0.2;
-      transform: scale(0.8);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-}
-
-@keyframes twinkle-and-move {
-    0%, 100% {
-      opacity: 0.2;
-      transform: scale(0.8) translate(0, 0);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.2) translate(2px, -2px);
-    }
-}
-
-@keyframes tilt {
-    0%, 100% {
-      transform: rotate(-5deg);
-    }
-    50% {
-      transform: rotate(5deg);
-    }
-  }
-
-/* 
------------------------------------------------------------------------------
-BOTÓN DE CHAT 
------------------------------------------------------------------------------
-*/
 
 .boton-chat {
     position: fixed;
@@ -139,6 +62,7 @@ BOTÓN DE CHAT
     align-items: center;
     justify-content: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8); /* Optional: adds a shadow for depth */
+    z-index: 7;
 }
 
 .boton-chat p {
@@ -162,24 +86,27 @@ SECCIONES DE LA PAGINA
 .seccion-inicial {
     background-color: #F1B4D6;
     border-bottom: 2px solid black;
-    height: 45vw;
+    height: 43vw;
 }
 
 #seccion-nosotros {
     background-color: #FFF35F;
-    height: 85vw;
+    height: 75vw;
 }
 
 #seccion-galeria {
-    background-color: orangered;
+    background-color: rgb(223, 208, 202);
+    height: 35vw;
 }
 
 #seccion-precios {
-    background-color: aliceblue;
+    background-color: blue;
+    height: 55vw;
 }
 
 #seccion-contacto {
     background-color: #F1B4D6;
+    height: 65vw;
 }
 
 /* 
@@ -201,6 +128,7 @@ MENU DE NAVEGACIÓN
 .item {
     display: inline-block;
     margin-right: 7%;
+    
 }
 
 .item1 {
@@ -273,60 +201,57 @@ IMAGENES TEXTO SECCION INICIAL
 }
 
 #imagen-principal {
-    width: 40vw;
-    height: 55vw;
+    width: 35vw;
+    height: 45vw;
 }
 
 .circulo-sonriente {
-    right: 14%;
+    right: 14vw;
     width: 12vw;
     top: 39vw;
-    animation: spin 7s linear infinite;
 }
 
 .rayo {
-    right: 16%;
-    top: 27vw;
-    width: clamp(65px, 12vw, 200px);
-    animation: tilt 2s ease-in-out infinite;
+    right: 18vw;
+    top: 28vw;
+    width: clamp(65px, 3vw, 200px);
     z-index: 1;
 }
 
 .estrella1 {
-    right: 25%;
+    right: 25vw;
     top: 35vw;
     width: clamp(10px, 3vw, 80px);    
 }
 
 .estrella2 {
-    left: 20%;
+    left: 20vw;
     top: 16vw;
     width: clamp(10px, 3vw, 80px);    
 }
 
 .estrella3 {
-    left: 24%;
+    left: 24vw;
     top: 28vw;
     width: clamp(18px, 6vw, 100px);    
 }
 
 .figura-celeste {
-    left: 25%;
-    top: 40.5vw;
-    width: clamp(65px, 10vw, 130px); 
-    animation: spin 10s linear infinite;
+    left: 27vw;
+    top: 39.5vw;
+    width: clamp(65px, 8vw, 130px); 
 }
 
 .caja-imagen-izquierda {
     position: absolute;
     top: 32vw;
-    left: -6%;
+    left: -6vw;
     border-radius: 10%;
 }
 
 #imagen-inicial-izquierda {
     width: 28vw;
-    height: 38vw;    
+    height: 28vw;    
 }
 
 #imagen-inicial-derecha {
@@ -337,6 +262,804 @@ IMAGENES TEXTO SECCION INICIAL
 .caja-imagen-derecha {
     position: absolute;
     top: 13vw;
-    right: 3%;
+    right: 3vw;
     border-radius: 10%;
+}
+
+/* 
+-----------------------------------------------------------------------------
+SECCION NOSOTROS 
+-----------------------------------------------------------------------------
+*/
+
+
+.circleMedLuna1{
+    left: 3vw;
+    top: 69vw;
+    width: clamp(10px, 3vw, 100px); 
+}
+.circleMedLuna2{
+    right: 3vw;
+    top: 69vw;
+    width: clamp(18px, 3vw, 100px); 
+}
+.circleMedLuna3{
+    position: absolute;
+    left: 3vw;
+    top: 111vw;
+    width: clamp(10px, 3vw, 100px); 
+}
+.circleMedLuna4{
+    position: absolute;
+    right: 3vw;
+    top: 111vw;
+    width: clamp(18px, 3vw, 100px);
+}
+#img-festejo{
+    width: 27vw;
+    height: 32vw;
+    transform: rotate(353deg);
+}
+.imgFestejo{
+    position: absolute;
+    left: 11vw;
+    top: 73vw;
+    width: clamp(18px, 6vw, 100px); 
+    z-index: 4;
+}
+
+.borde-imagen{
+    position: absolute;
+    background-color: #f9f4f7;
+    border: 1px solid black;
+    width: 28.8vw;
+    height: 34.3vw;
+    left: 10vw;
+    top: 72vw;
+    transform: rotate(353deg);
+    z-index: 3;
+    overflow: auto;
+}
+.caja2{
+    position: absolute;
+    background-color: #f165b9;
+    border: 2px solid black;
+    width: 28vw;
+    height: 34.3vw;
+    left: 9vw;
+    top: 73vw;
+    transform: rotate(353deg);
+    z-index: 2;
+}
+
+.caja3{
+    position: absolute;
+    background-color: #f165b9;
+    border: 2px solid black;
+    width: 28vw;
+    height: 34.3vw;
+    left: 8vw;
+    top: 74vw;
+    transform: rotate(353deg);
+    z-index: 1;
+}
+.texImgIzq{
+    font-family: sans-serif;
+    position: absolute;
+    left: 7vw;
+    top: 70vw;
+}
+.texImgDere{
+    font-family: sans-serif;
+    position: absolute;
+    right: 7vw;
+    top: 70vw;
+}
+.tituloTex1{
+    position: absolute;
+    top: 69vw;
+    z-index: 1;
+    left: 43vw;
+    color: #1357EB;
+    font-size: clamp(3rem, 9vw, 12rem);
+    color: transparent;
+    -webkit-text-stroke: 4px rgb(68, 100, 204);
+}
+.tituloTex2{
+    position: absolute;
+    top: 76vw;
+    z-index: 1;
+    left: 43vw;
+    color: #1357EB;
+    font-size: clamp(3rem, 9vw, 12rem);
+    color: transparent;
+    -webkit-text-stroke: 4px rgb(68, 100, 204);
+}
+.texto1{
+    position: absolute;
+    top: 88vw;
+    left: 44vw;
+    width: 45vw;
+    z-index: 1;
+    font-size: clamp(1rem, 1.7vw, 4rem);
+}
+.texto2{
+    position: absolute;
+    top: 102vw;
+    left: 44vw;
+    width: 25vw;
+}
+.imgAnillos{
+    position: absolute;
+    top: 100vw;
+    left: 63.8vw;
+    width: 6vw;
+    z-index: 1;
+}
+.imgRoja{
+    position: absolute;
+    top: 100vw;
+    left: 69.5vw;
+    width: 5vw;
+    z-index: 1;
+}
+.seccionGaleria{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 19px;
+
+}
+.galeria{
+    border-radius: 50px;
+    border: 1px solid black;
+    min-width: 12vw;
+    z-index: 2;
+}
+.galeria-1{
+   grid-column: 1 /1;
+   grid-row: 1 /1;
+   height: 23vw;
+}
+.galeria-2{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    height: 23vw;
+}
+.galeria-3{
+    grid-row: 1 / 1;
+    grid-column: 3 / 5;
+    height: 23vw;
+}
+.galeria-4{
+    grid-row: 1 / 1;
+    grid-column: 5 / 6;
+    height: 23vw;
+}
+.galeria-5{
+    grid-row: 1 / 1;
+    grid-column: 6 / 7;
+    height: 23vw;
+}
+.galeria-6{
+    grid-row: 2 / 2;
+    grid-column: 1 / 3;
+    height: 23vw;
+}
+.galeria-7{
+    grid-row: 2 / 2;
+    grid-column: 3 / 3;
+    height: 23vw;
+}
+.galeria-8{
+    grid-row: 2 / 2;
+    grid-column: 4 / 6;
+}
+.galeria-9{
+    grid-row: 2 / 2;
+    grid-column: 6 / 7;
+    height: 23vw;
+}
+.colorRojo{
+    background-color: #df4c41;
+    z-index: 0;
+    height: 22vw;
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------- precios-----------------*/
+
+.cuadro{
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+}
+.obj{
+    background-color: rgb(238, 168, 179);
+    border: 2px solid black;
+    grid-area: 1/1 /2/3;
+    }
+.obj2{
+    background-color: rgb(238, 168, 179);
+    border: 2px solid black;
+    grid-area: 2/1/3/3;
+}
+.obj3{
+    background-color: rgb(226, 212, 11);
+    border: 2px solid black;
+    grid-area: 1/3/3/4;
+}
+
+
+.obj4{
+    background-color: rgb(245, 245, 245);
+    border: 1px solid black;
+    grid-area: 1/4/3/5;
+}
+.obj5{
+    background-color: rgb(32, 41, 168);
+    border: 1px solid rgb(209, 26, 26);
+    grid-area: 1/5/3/6;
+}
+.obj6{
+    background-color: rgb(241, 226, 4);
+    border: 1px solid rgb(216, 203, 21);
+    grid-area: 3/1/5/2;
+}
+
+
+.obj7{
+    background-color: rgb(224, 228, 17);
+    border: 1px solid black;
+    grid-area: 3/4/4/6;
+}
+.obj8{
+    background-color: rgb(8, 5, 8);
+    border: 1px solid black;
+    grid-area: 3/2/5/4;
+    }
+
+.obj9{
+    background-color: rgb(122, 18, 11);
+    border: 1px solid black;
+    grid-area: 4/4/5/6;
+}
+
+#caja1{
+    position: absolute;
+    z-index: 1;
+    color : #df4c41;
+    font-size: clamp(2rem, 2vw, 7rem);
+    left: 5vw;
+}
+#caja2{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    top: 196vw;
+    left: 2vw;
+    z-index: 3;
+}
+.texcaja2{
+    position: absolute;
+    z-index: 1;
+    color : blue;
+    left: 8vw;
+    top: 194vw;
+    font-size: clamp(1.5rem, 2vw, 5rem);
+
+}
+.lineAmari{ 
+    position: absolute;
+    top: 198vw;
+    z-index: 1;
+    left: 3vw;
+    width: 33vw;
+    height: 0.5vw;
+    border: 2px solid yellow;
+    border-radius: 56vw;
+    background-color: yellow;
+}
+.puntoAzul{
+    position: absolute;
+    top: 192.5vw;
+    height: 1.6vw;
+    width: 1.6vw;
+    border: 2px solid blue;
+    z-index: 3;
+    left: 33vw;
+    border-radius: 70vw;
+    background-color: #3207cc;
+}
+.N3{
+    position: absolute;
+    top: 192.7vw;
+    height: 1.6vw;
+    width: 1.6vw;
+    z-index: 3;
+    left: 33.4vw;
+    border-radius: 70vw;
+    color: white;
+    font-size: clamp(1.5rem, 1vw, 5rem);
+}
+.texceremonia{
+    position: absolute;
+    font-size: clamp(1.5rem, 2vw, 5rem);
+    top: 180vw;
+    right: 23vw;
+    color: #3207cc;
+}
+.texNo{
+    position: absolute;
+    font-size: clamp(1.5rem, 1vw, 5rem);
+    top: 195vw;
+    right: 29vw;
+    color: #3207cc;
+}
+.cajavacia{
+    position: absolute;
+    height: 5vw;
+    width: 10vw;
+    top: 188vw;
+    right: 25vw;
+    border-radius: 20vw;
+    border: 1px solid black;
+    background-color: lightpink;
+}
+.contornoCaja{
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    top: 188.5vw;
+    right: 30.5vw;
+    border-radius: 100vw;
+    border: 1px solid black;
+    background-color: #3207cc;
+
+}
+.imgfeliz{
+    position: absolute;
+    width: 3.5vw;
+    height: 3.5vw;
+    top: 188.7vw;
+    right: 30.7vw;
+    z-index: 3;
+}
+.imgmapa{
+    position: absolute;
+    width: 28vw;
+    height: 28vw;
+    left: 25vw;
+    top: 206vw;
+    z-index: 5;
+}
+.textoMapa{
+    color: white;
+    font-size: clamp(1.5rem, 2.8vw, 5rem);
+    position: absolute;
+    top: 206vw;
+    left: 24vw;
+}
+.textoMapa2{
+    color: white;
+    position: absolute;
+    top: 207vw;
+    left: 40vw;
+    width: 40vw;
+    font-size: clamp(1.5rem, 2vw, 5rem);
+}
+
+
+
+
+
+
+
+.imgContacto{
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    width: 80%;
+    max-width: auto; 
+    min-width: 5%;
+}
+.imgPrincipal{
+    position: absolute;
+    top: 246vw;
+    left: 10vw;
+    z-index: 4;
+    width: 35vw;
+}
+
+.tocaDisco{
+    position: absolute;
+    top: 242vw;
+    left: 8vw;
+    width: 13vw;
+    transform: rotate(350deg);
+    z-index: 1;
+}
+.coraImg{
+    position: absolute;
+    top: 260vw;
+    left: 3vw;
+    width: 7vw;
+    transform: rotate(360deg);
+    z-index: 1;
+}
+.imgRayo{
+    position: absolute;
+    top: 269vw;
+    left: 5.5vw;
+    width: 8vw;
+    transform: rotate(346deg);
+    z-index: 1;
+}
+.carAzul{
+    position: absolute;
+    top: 282vw;
+    left: 9vw;
+    width: 8vw;
+    transform: rotate(366deg);
+    z-index: 5;
+}
+.imgConfeRojo{
+    position: absolute;
+    top: 278vw;
+    left: 10vw;
+    width: 17vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+.copas{
+    position: absolute;
+    top: 277vw;
+    left: 41vw;
+    width: 10vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+.confAzul{
+    position: absolute;
+    top: 269vw;
+    left: 39vw;
+    width: 8vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+.anilloAzul{
+    position: absolute;
+    top: 260vw;
+    left: 39vw;
+    width: 10vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+.picAzul{
+    position: absolute;
+    top: 255vw;
+    left: 41vw;
+    width: 6vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+.disco{
+    position: absolute;
+    top: 243vw;
+    left: 39vw;
+    width: 11vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+.letraY{
+    position: absolute;
+    top: 238vw;
+    left: 25vw;
+    width: 12vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+
+.tituloContac{
+    position: absolute;
+    top: 250vw;
+    z-index: 1;
+    left: 55vw;
+    color: #1357EB;
+    font-size: clamp(3rem, 3vw, 10rem);
+    -webkit-text-stroke: 4px rgb(68, 100, 204);
+}
+.titulo2Contac{
+    position: absolute;
+    top: 258vw;
+    z-index: 1;
+    left: 55vw;
+    color: black;
+    font-family: sans-serif;
+    -webkit-text-stroke: 1px black;
+    
+}
+
+.flecRoja{
+    position: absolute;
+    top: 282.5vw;
+    right: 10vw;
+    width: 3vw;
+    transform: rotate(0deg);
+    z-index: 4;
+}
+.flecRoja2{
+    position: absolute;
+    top: 282.5vw;
+    right: 3vw;
+    width: 3vw;
+    transform: rotate(180deg);
+    z-index: 4;
+}
+.lineaNaran{
+    position: absolute;
+    top: 288vw;
+    z-index: 4;
+    right: 3vw;
+    width: 40vw;
+    height: 0.5vw;
+    border: 2px solid #df4c41;
+    border-radius: 56vw;
+    background-color: #df4c41;
+}
+.puntoRojo{
+    position: absolute;
+    top: 282vw;
+    height: 4.6vw;
+    width: 4.6vw;
+    border: 2px solid #df4c41;
+    z-index: 3;
+    right: 2.5vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.puntoR1{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:34vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.puntoR2{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:31.5vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.lineaVert{
+    position: absolute;
+    top: 285vw;
+    z-index: 4;
+    right: 30.5vw;
+    width: 0.5vw;
+    height: 2.5vw;
+    border-radius: 1vw;
+    background-color: #df4c41;
+}
+.puntoR3{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:28vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.puntoR4{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:25.8vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.lineaVert2{
+    position: absolute;
+    top: 285vw;
+    z-index: 4;
+    right: 25vw;
+    width: 0.5vw;
+    height: 2.5vw;
+    border-radius: 1vw;
+    background-color: #df4c41;
+}
+.puntoR5{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:22.8vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.puntoR6{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:20.5vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.puntoR7{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:18.2vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.puntoR8{
+    position: absolute;
+    top: 285vw;
+    height: 2vw;
+    width: 2vw;
+    z-index: 3;
+    right:16vw;
+    border-radius: 70vw;
+    background-color: #df4c41;
+}
+.puntoInt{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:34.6vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+.puntoInt2{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:32vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+.puntoInt3{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:28.5vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+.puntoInt4{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:26.5vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+.puntoInt5{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:23.5vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+.puntoInt6{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:21.1vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+
+.puntoInt7{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:18.8vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+.puntoInt8{
+    position: absolute;
+    top: 285.5vw;
+    height: 0.7vw;
+    width: 0.7vw;
+    z-index: 3;
+    right:16.8vw;
+    border-radius: 70vw;
+    background-color: palevioletred;
+}
+
+
+#cajaRedes{
+    position: relative;
+    border: 2px solid black;
+    height: 5vw;
+    width: 42vw;
+    top: 48vw;
+    left: 55vw;
+    
+}
+.cuadRedes{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+}
+.cj{
+    background-color: #f9f4f7;
+    border: 1px solid black;
+}
+.faceb{
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    top: 0.5vw;
+    right: 12.9vw;
+    border-radius: 50vw;
+    background-color: lightblue;
+}
+.instag{
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    top: 0.5vw;
+    right: 7.5vw;
+    border-radius: 50vw;
+    background-color: lightpink;
+
+}
+.telegram{
+    position: absolute;
+    height:4vw;
+    width: 4vw;
+    top: 0.5vw;
+    right: 1vw;
+    border-radius: 50vw;
+    background-color: #FFF35F;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+@media(max-width: 767px){
+    *{display: none;
+    }
+
+
+
 }
